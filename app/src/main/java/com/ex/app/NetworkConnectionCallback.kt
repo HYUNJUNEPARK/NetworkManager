@@ -13,24 +13,12 @@ class NetworkConnectionCallback(private val context: Context) : ConnectivityMana
         .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR) //Mobile Network
         .addTransportType(NetworkCapabilities.TRANSPORT_WIFI) //WIFI Network
         .build()
+
+
     var networkType : String? = "-"
     var networkState: String? = "연결 해제"
 
-    //NetworkCallback 등록
-    fun register() {
-        connectivityManager.registerNetworkCallback(networkRequest, this)
-
-        //앱 실행하자마자 네트워크 연결상태를 알고 싶을 때 사용
-//        if (networkConnectionState() == null) {
-//            MyDialog(context).unConnectionDialog.show()
-//        }
-    }
-
-    //NetworkCallback 해제
-    fun unregister() {
-        connectivityManager.unregisterNetworkCallback(this)
-    }
-
+    //TODO APP
     //콜백이 등록되거나 네트워크가 연결되었을 때 실행되는 메소드
     override fun onAvailable(network: Network) {
         super.onAvailable(network)
@@ -45,6 +33,7 @@ class NetworkConnectionCallback(private val context: Context) : ConnectivityMana
         }
     }
 
+    //TODO APP
     //네트워크 끊겼을 때 실행되는 메소드
     override fun onLost(network: Network) {
         super.onLost(network)
@@ -55,6 +44,24 @@ class NetworkConnectionCallback(private val context: Context) : ConnectivityMana
         MyDialog(context).unConnectionDialog.show()
     }
 
+    //TODO MODULE
+    //NetworkCallback 등록
+    fun register() {
+        connectivityManager.registerNetworkCallback(networkRequest, this)
+
+        //앱 실행하자마자 네트워크 연결상태를 알고 싶을 때 사용
+//        if (networkConnectionState() == null) {
+//            MyDialog(context).unConnectionDialog.show()
+//        }
+    }
+
+    //TODO MODULE
+    //NetworkCallback 해제
+    fun unregister() {
+        connectivityManager.unregisterNetworkCallback(this)
+    }
+
+    //TODO MODULE
     private fun networkConnectionState(): Network? {
         val network: Network? = connectivityManager.activeNetwork //연결된 네트워크가 없을 시 null 리턴
         val networkCapabilities: NetworkCapabilities? = connectivityManager.getNetworkCapabilities(network)
