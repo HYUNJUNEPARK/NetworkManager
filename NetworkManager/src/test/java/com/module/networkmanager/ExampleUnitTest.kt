@@ -1,4 +1,4 @@
-package com.example.networkstate
+package com.module.networkmanager
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package com.example.networkstate
+package com.ex.app
 
 import android.app.AlertDialog
 import android.content.Context
