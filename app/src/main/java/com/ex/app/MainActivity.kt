@@ -1,9 +1,9 @@
-package com.example.networkstate
+package com.ex.app
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import com.example.networkstate.databinding.ActivityMainBinding
+import com.ex.app.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater)}
