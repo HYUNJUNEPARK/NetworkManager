@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NetworkState">
         <activity
-            android:name="com.ex.app.MainActivity"
+            android:name="com.ex.app.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
